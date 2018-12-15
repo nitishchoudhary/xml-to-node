@@ -1,0 +1,11 @@
+<?php
+
+/**
+ * Implements hook_uninstall().
+ *
+ * Cleans up config entities installed by this module.
+ */
+function custom_xml_migrate_uninstall() {
+  db_query("DELETE FROM {config} WHERE name LIKE '%migrate_plus.migration.pages%'");
+  drupal_flush_all_caches();
+}

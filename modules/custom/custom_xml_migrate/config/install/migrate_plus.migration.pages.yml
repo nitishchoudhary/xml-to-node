@@ -1,0 +1,51 @@
+# Migration metadata
+id: pages
+label: Pages Content
+migration_group: default
+source:
+  plugin: url
+  urls: sites/default/files/ndtvnews-top-stories.xml
+  data_fetcher_plugin: http
+  data_parser_plugin: xml
+  item_selector: /pages/item
+  fields:
+      name: guid
+      label: 'Guid'
+      selector: guid
+      name: title
+      label: 'Title'
+      selector: title
+      name: link
+      label: 'Link'
+      selector: link
+      name: updatedAt
+      label: 'Updated At'
+      selector: updatedAt
+      name: pubDate
+      label: 'Publist Date'
+      selector: pubDate
+      name: StoryImage
+      label: 'Story Image'
+      selector: StoryImage
+      
+process:
+  type:
+    plugin: default_value
+    default_value: my_custom_migrate
+    
+  nid: guid
+  title: title
+  field_guid: guid
+  field_link: link
+  field_updatedat: updatedAt
+  field_pubdate: pubDate
+  field_storyimage: StoryImage
+  uid:
+    plugin: default_value
+    default_value: 1
+  status:
+    plugin: default_value
+    default_value: 1
+destination:
+  plugin: entity:node
+migration_dependencies: {}

@@ -1,0 +1,7 @@
+name: Custom Migrate
+type: module
+core: 8.x
+description: 'Custom Migrate.'
+dependencies:
+  - migrate_tools
+  - migrate_plus
