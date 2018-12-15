@@ -4,7 +4,7 @@ label: Pages Content
 migration_group: default
 source:
   plugin: url
-  urls: sites/default/files/ndtvnews-top-stories.xml
+  urls: ndtvnews-top-stories.xml
   data_fetcher_plugin: http
   data_parser_plugin: xml
   item_selector: /pages/item
